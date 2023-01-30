@@ -30,15 +30,27 @@ $('#search').on('submit', function (event) {
                 .then(function (weatherResponse) {
                     // Icon URL http://openweathermap.org/img/w/" + iconcode + ".png"
 console.log(weatherResponse)
+
                     // Put the response on the HTML page
                     const weatherList = weatherResponse.list;
                     // Now forecast
                     const today = weatherList[0];
                     console.log(today);
+                    var currentCity = response[0].name
                     var currentTemp = today.main.temp
                     var currentHumidity = today.main.humidity
                     var currentWind = today.wind.speed
-$("#temp").text("Temperature:" + currentTemp)
+                    var currentIcon = today.weather[0].icon;
+                                     
+$("#city-name").text(currentCity)
+$("#city-name").text(currentCity)
+$("#humidity").text("Humidity:" + currentHumidity)
+$("#wind-speed").text("Wind speed:" + currentWind)
+$("#icon").html(
+    `<img src="http://openweathermap.org/img/wn/${currentIcon}.png">`
+  );
+
+$("#temp").text("Temperature:" + currentTemp) 
                     // TODO: put today's weather in container for today's weather
 var counts = 0
                     // 5 days forecast
