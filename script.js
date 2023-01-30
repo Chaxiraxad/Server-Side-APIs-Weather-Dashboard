@@ -37,13 +37,14 @@ console.log(weatherResponse)
                     const today = weatherList[0];
                     console.log(today);
                     var currentCity = response[0].name
+                    var currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
                     var currentTemp = today.main.temp
                     var currentHumidity = today.main.humidity
                     var currentWind = today.wind.speed
                     var currentIcon = today.weather[0].icon;
                                      
 $("#city-name").text(currentCity)
-$("#city-name").text(currentCity)
+$("#time-date").text(currentTime)
 $("#humidity").text("Humidity:" + currentHumidity)
 $("#wind-speed").text("Wind speed:" + currentWind)
 $("#icon").html(
