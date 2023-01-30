@@ -42,16 +42,19 @@ console.log(weatherResponse)
                     var currentHumidity = today.main.humidity
                     var currentWind = today.wind.speed
                     var currentIcon = today.weather[0].icon;
+                    var currentDescrip = today.weather[0].description
                                      
 $("#city-name").text(currentCity)
 $("#time-date").text(currentTime)
-$("#humidity").text("Humidity:" + currentHumidity)
-$("#wind-speed").text("Wind speed:" + currentWind)
+$("#temp").text("Temperature: " + currentTemp.toFixed(0) + "°C") 
+$("#humidity").text("Humidity: " + currentHumidity + "%")
+$("#wind-speed").text("Wind speed: " + currentWind + "mph")
+$("#description").text("Description: " + currentDescrip)
 $("#icon").html(
     `<img src="http://openweathermap.org/img/wn/${currentIcon}.png">`
   );
 
-$("#temp").text("Temperature:" + currentTemp) 
+
                     // TODO: put today's weather in container for today's weather
 var counts = 0
                     // 5 days forecast
