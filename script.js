@@ -17,9 +17,9 @@ $('#search').on('submit', function (event) {
 // localStorage.getItem.$("#city-input").val().pr
       //function to retrieve user inputted city name
   
-    
+      $('#cityList').append($('<td>' + history))
   
-
+    
     
     // Call Geocoding API when search form is submitted to find city lat and long value
     $.ajax({
@@ -77,6 +77,7 @@ $('#search').on('submit', function (event) {
                         var weatherWind = weather.wind.speed
                         var weatherIcon = weather.weather[0].icon;
                         var weatherDescrip = weather.weather[0].main
+                        var weatherTime = currentTime
                         // var weatherDate = currentTime
                         counts++
 
@@ -84,7 +85,7 @@ $('#search').on('submit', function (event) {
                         $("#hum" + counts).text("Humidity: " + weatherHumidity + "%")
                         $("#wind" + counts).text("Wind speed: " + weatherWind + "mph")
                         $("#descrip" + counts).text("Description: " + weatherDescrip)
-                        // $("#time-date").text(currentTime)
+                        $("#date" + counts).text(weatherTime)
                         $("#icon" + counts).html(
                             `<img src="https://openweathermap.org/img/wn/${weatherIcon}.png">`
                         );
