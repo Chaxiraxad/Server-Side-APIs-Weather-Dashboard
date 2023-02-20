@@ -1,26 +1,49 @@
 const apiKey = "1cf52c354cfb0d79b21f85abef3fc8a9";
-const history = JSON.parse(localStorage.getItem('history')) || [];
+let history = JSON.parse(localStorage.getItem('history')) || [];
 
+history.forEach((city) => {
 
+    $('#cityList').prepend($('<button>' + city + "</button>"))
 
-$('#search').on('submit', function (event) {
-    event.preventDefault();
+});
+
+function getData(userInput) {
+
+    history = JSON.parse(localStorage.getItem('history')) || [];
     // getCity()
-    const userInput = $('#city-input').val();
+    
     const queryUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=5&appid=' + apiKey;
 
 
 
     // Add the history to local storage
-    history.push(userInput);
-    localStorage.setItem('history', JSON.stringify(history));
-// localStorage.getItem.$("#city-input").val().pr
-      //function to retrieve user inputted city name
-  
-      $('#cityList').append($('<td>' + history))
-  
-    
-    
+
+
+    // localStorage.getItem.$("#city-input").val().pr
+    //function to retrieve user inputted city name
+    if (history.includes(userInput) === false) {
+        history.push(userInput);
+        localStorage.setItem('history', JSON.stringify(history));
+        console.log(userInput)
+        $('#cityList').prepend($('<button>' + userInput + "</button>"))
+
+    }
+
+    //     $('#clr-btn').on('submit', function (event) {
+
+    //         event.preventDefault();s
+    //         localStorage.clear()
+    //   });
+
+
+
+    //   $("#clr-btn").on('click', function (event) {
+    //      localStorage.removeItem("history");
+    // //    $(".previous-search-button").remove()
+
+    // })
+
+
     // Call Geocoding API when search form is submitted to find city lat and long value
     $.ajax({
         url: queryUrl,
@@ -94,42 +117,35 @@ $('#search').on('submit', function (event) {
 
 
 
-                  
+
                         // TODO: put 5 day's forecast weather in container for the 5 day forecast
                     }
 
-                    // var day1 = moment().add(1, "days").format("D MMMM YYYY")
-                    // var day2 = moment().add(2, "days").format("D MMMM YYYY")
-                    // var day3 = moment().add(3, "days").format("D MMMM YYYY")
-                    // var day4 = moment().add(4, "days").format("D MMMM YYYY")
-                    // var day5 = moment().add(5, "days").format("D MMMM YYYY")
-                    // $("#date1").text(day1);
-                    // $("#date2").text(day2);
-                    // $("#date3").text(day3);
-                    // $("#date4").text(day4);
-                    // $("#date5").text(day5);
 
-                    // var icon1 = weather.weather[0].icon;
-                    // var icon2 = weather.weather[0].icon;
-                    // var icon3 = weather.weather[0].icon;
-                    // var icon4 = weather.weather[0].icon;
-                    // var icon5 = weather.weather[0].icon;
-
-                    // $("#icon1").html(
-                    //     `<img src="http://openweathermap.org/img/wn/${icon1}@2x.png">`
-                    //   );
-                    //   $("#icon2").html(
-                    //     `<img src="http://openweathermap.org/img/wn/${icon2}@2x.png">`
-                    //   );
-                    //   $("#icon3").html(
-                    //     `<img src="http://openweathermap.org/img/wn/${icon3}@2x.png">`
-                    //   );
-                    //   $("#icon4").html(
-                    //     `<img src="http://openweathermap.org/img/wn/${icon4}@2x.png">`
-                    //   );
-                    //   $("#icon5").html(
-                    //     `<img src="http://openweathermap.org/img/wn/${icon5}@2x.png">`
-                    //   );
                 });
         });
+
+
+}
+
+
+
+$('#search').on('submit', function (event) {
+    event.preventDefault();
+    const userInput = $('#city-input').val().toLowerCase();
+    getData(userInput)
 });
+
+$("#clr-btn").on('click', function (event) {
+    console.log(event, "clear event")
+    localStorage.clear();
+    $("#cityList").empty()
+
+})
+
+$("#cityList").on('click', function (event) {
+console.log(event)
+// Finish the line below to grab the text of the button that was clicked
+const userInput = event
+getData(userInput)
+})
