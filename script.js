@@ -29,21 +29,6 @@ function getData(userInput) {
 
     }
 
-    //     $('#clr-btn').on('submit', function (event) {
-
-    //         event.preventDefault();s
-    //         localStorage.clear()
-    //   });
-
-
-
-    //   $("#clr-btn").on('click', function (event) {
-    //      localStorage.removeItem("history");
-    // //    $(".previous-search-button").remove()
-
-    // })
-
-
     // Call Geocoding API when search form is submitted to find city lat and long value
     $.ajax({
         url: queryUrl,
@@ -146,6 +131,7 @@ $("#clr-btn").on('click', function (event) {
 $("#cityList").on('click', function (event) {
 console.log(event)
 // Finish the line below to grab the text of the button that was clicked
-const userInput = event
+const userInput =  event
+// $("#cityList").text(event)
 getData(userInput)
 })
