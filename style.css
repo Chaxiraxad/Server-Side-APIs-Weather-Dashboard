@@ -1,3 +1,7 @@
+body {
+  background-color: #75c0f5;
+}
+
 #info-section {
     padding-top: 15px;
   }
@@ -30,6 +34,8 @@
   
   .current-city-data {
     min-height: 300px;
+    font-size: large;
+    line-height: 1pt;
   }
   
   .table-box {
@@ -60,6 +66,10 @@
     color: #fff;
   }
 
+  .h3 { 
+    text-align: center;
+  }
+
   
 element.style {
   background-color: #000080;
@@ -68,6 +78,7 @@ element.style {
   #submit {
     width: 100%;
     margin-bottom: 20px;
+    width: auto;
   }
 
   .columns {
@@ -79,7 +90,7 @@ element.style {
   }
   
   .table-container {
-background-color: white;
+background-color: #75c0f5;
   }
 
   @media only screen and (max-width: 599px) {
