@@ -12,7 +12,7 @@ function getData(userInput) {
     history = JSON.parse(localStorage.getItem('history')) || [];
     // getCity()
     
-    const queryUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=5&appid=' + apiKey;
+    const queryUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=5&appid=' + apiKey;
 
 
 
@@ -40,7 +40,7 @@ function getData(userInput) {
             const lon = response[0].lon;
 
 
-            const weatherQueryUrl = 'http://api.openweathermap.org/data/2.5/forecast?units=metric&lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
+            const weatherQueryUrl = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
 
             // Call 5 day weather forecast API after we have city lat and lon value
             $.ajax({ url: weatherQueryUrl })
