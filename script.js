@@ -131,7 +131,9 @@ $("#clr-btn").on('click', function (event) {
 $("#cityList").on('click', function (event) {
 console.log(event)
 // Finish the line below to grab the text of the button that was clicked
-const userInput =  event
+const userInput =  event.target.innerText
 // $("#cityList").text(event)
 getData(userInput)
 })
+
+getData('Tenerife')
