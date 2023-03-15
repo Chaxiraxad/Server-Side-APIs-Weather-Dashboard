@@ -50,6 +50,7 @@ body {
     background-color: #a5b1c2;
     margin: 3px;
     min-height: 300px;
+    text-align: center;
   }
   
   .hero {
@@ -85,7 +86,7 @@ element.style {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: nowrap;
   }
   
