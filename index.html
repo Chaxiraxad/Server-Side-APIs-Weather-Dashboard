@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./style.css" />
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <title>Weather Dashboard</title>
 </head>
 
@@ -25,7 +25,7 @@
       <div class="columns">
         <div class="column is-one-quarter content" style="justify-content: flex-start;">
 
-          <form id="search">
+          <form id="search" style="margin-right: 20px">
             <input id="city-input" class="input is-info" type="text" placeholder="Enter the name of a city" />
             <button id="submit" class="button is-info" type="submit">
               Get Weather
@@ -33,12 +33,13 @@
           </form>
           <!-- list of past searched cities -->
           <div class="box table-box">
-            <div class="table-container">
+            <div class="table-container" style="background-color: white;">
 
-              <div id="cityList"></div>
+              <div class="list" id="cityList" >
+              </div>
               <!-- Table data generated in javascript -->
-              <button id="clr-btn"  type="button" class="btn btn-primary">Clear</button>
-              
+              <button id="clr-btn" type="button" class="btn btn-primary">Clear</button>
+
             </div>
           </div>
         </div>
@@ -56,25 +57,25 @@
               <h4 id="wind-speed"></h4>
 
             </div>
-            <div class="column" >
+            <div class="column">
               <div id="icon"></div>
             </div>
           </div>
           <!-- Forecast cards -->
           <div class="container">
-            <div class="content" style="color: white; padding-left: 25px">
-              <h2>5-Day Forecast: </h2>
+            <div class="content" >
+              <h2 style="color: rgba(10, 10, 11, 0.545);">5-Day Forecast: </h2>
               <div class="columns">
                 <div class="column card">
                   <div id="day1" class="card-content">
-                    <h3 id="date1" style="text-align: center;" class="has-text-white"></h3>
+                    <h3 id="date1" style="text-align: center" class="has-text-white"></h3>
                     <div id="icon1"></div>
                     <h4 id="temp1" class="has-text-white"></h4>
                     <h4 id="hum1" class="has-text-white"></h4>
                   </div>
                 </div>
                 <div class="column card">
-                  <div id="day2"  class="card-content">
+                  <div id="day2" class="card-content">
                     <h3 id="date2" style="text-align: center;" class="has-text-white"></h3>
                     <div id="icon2"></div>
                     <h4 id="temp2" class="has-text-white"></h4>

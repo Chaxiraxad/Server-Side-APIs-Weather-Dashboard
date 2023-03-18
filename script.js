@@ -6,6 +6,8 @@ history.forEach((city) => {
     $('#cityList').prepend($('<button>' + city + "</button>"))
 
 });
+$(".list").css("color", "blue");
+
 
 function getData(userInput) {
 

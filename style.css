@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 200px;
 }
 
   
@@ -47,6 +48,9 @@ body {
   }
   
   .card {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
     background-color: #a5b1c2;
     margin: 3px;
     min-height: 300px;
@@ -69,6 +73,7 @@ body {
 
   .h3 { 
     text-align: center;
+    font-size: 5px;
   }
 
   
@@ -82,6 +87,8 @@ element.style {
     width: auto;
   }
 
+ 
+
   .columns {
     display: flex;
     flex-direction: row;
@@ -90,11 +97,19 @@ element.style {
     flex-wrap: nowrap;
   }
   
-  .table-container {
+  /* .table-container {
 background-color: #75c0f5;
   }
 
-  @media only screen and (max-width: 599px) {
+  .list {
+   display: flex;
+    flex-direction: column;
+     width: 200px;
+    
+
+  } */
+
+  @media only screen and (max-width: 600px) {
   
     .column {
       display: flex;
