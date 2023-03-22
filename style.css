@@ -32,7 +32,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
 }
 
   
@@ -100,18 +99,18 @@ element.style {
     flex-wrap: nowrap;
   }
   
-  /* .table-container {
-background-color: #75c0f5;
-  }
+  
 
   .list {
    display: flex;
     flex-direction: column;
-     width: 200px;
+   
     
 
-  } */
-
+  } 
+ h4 {
+  font-size: 20px;
+ }
   @media only screen and (max-width: 600px) {
   
     .column {
@@ -128,5 +127,11 @@ background-color: #75c0f5;
   
     .card-content {
       padding: 20px;
+    }
+
+  }
+  @media only screen and (max-width: 930px) {
+    .columns {
+      flex-direction: column;
     }
   }
